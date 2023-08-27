@@ -1,0 +1,119 @@
+body {
+    /* background-image: url('Img.png');
+    background-position: center; /* Center the image */ 
+    /* background-repeat: no-repeat; Do not repeat the image   */
+    /* background-size: cover; /* Resize the background image to cover the entire container   */
+    background-color: lightslategray;
+}
+
+/* Header */
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Style the "active" element to highlight the current page */
+  .topnav a.active {
+    text-decoration-line: underline;
+  }
+  
+  /* Style the search box inside the navigation bar */
+  .topnav input[type=text] {
+    width: 168.5px;
+    height: 15px;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 18px;
+    border-radius: 7px;
+    opacity: 0.5;
+    background: #D9D9D9;
+  }
+
+/* ------ */
+
+
+/* Top */
+
+.top {
+    width: 375px;
+    height: 195px;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+.top #cityname {
+    color: #FFF; 
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.185px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.top #temp {
+    color: #FFF;
+    font-size: 102px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: -0.51px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.top #desc {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    
+}
+
+.top #handlpressure {
+    color: #FFF;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+/* ------ */
+
+
+/* Card */
+
+.card {
+    width: 528px;
+    height: 212px;
+}
+
+
+
+
+/* -------- */
