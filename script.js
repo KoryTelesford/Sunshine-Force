@@ -2,7 +2,7 @@ console.log(weatherApiKey)
 
 //Input values
 const cityName = 'amsterdam'
-let weatherMood
+let weatherMood;
 
 //import Api
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weatherApiKey}&units=imperial`
@@ -15,10 +15,33 @@ const weatherTest = async () => {
         //fetch API
         const res = await fetch(apiUrl);
         const data = await res.json()
-        console.log(data)
         
         //spotify mood condition 
-        weatherMood = data.weather[0].main
+        switch(data.weather[0].main) {
+            case 'Rain' :
+                weatherMood = 'sad'
+                break;
+            case 'Drizzle' :
+                weatherMood = 'sad'
+                break;
+            case 'Thunderstorm' :
+                weatherMood = 'sad'
+                break;
+            case 'Snow' :
+                weatherMood = 'all i want for christmas'
+                break;
+            case 'Clear' :
+                weatherMood = 'happy'
+                break;
+            case 'Clouds' :
+                weatherMood = 'lofi'
+                break;
+            case 'Torando' :
+                weatherMood = 'rock'
+                break;
+            default :
+                weatherMood = 'unknown';
+        }
         
         //create Elements
         const city = document.getElementById("cityname")
