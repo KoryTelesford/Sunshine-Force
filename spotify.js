@@ -76,7 +76,7 @@ const SpotifyAPI = (() => {
 
 SpotifyAPI.getToken().then(token => {
     SpotifyAPI.getPlayListBySearch(token, weatherMood).then(playlists => {
-        let url = playlists.playlists.items[Math.floor(Math.random() * 10)].external_urls.spotify
+        let url = playlists.playlists.items[Math.floor(Math.random() * 5)].external_urls.spotify
         fetch(`https://embed.spotify.com/oembed?url=${url}`)
             .then(response => response.json())
             .then(data => {

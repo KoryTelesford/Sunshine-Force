@@ -1,7 +1,7 @@
 console.log(weatherApiKey)
 
 //Input values
-const cityName = 'amsterdam'
+const cityName = 'miami'
 let weatherMood;
 
 //import Api
@@ -17,6 +17,7 @@ const weatherTest = async () => {
         const data = await res.json()
         
         //spotify mood condition 
+        console.log(data.weather[0].main);
         switch(data.weather[0].main) {
             case 'Rain' :
                 weatherMood = 'sad'
@@ -39,8 +40,11 @@ const weatherTest = async () => {
             case 'Torando' :
                 weatherMood = 'rock'
                 break;
-            default :
-                weatherMood = 'unknown';
+            case undefined :
+                weatherMood = 'lofi'
+                break;
+            default:
+                weatherMood = 'lofi';
         }
         
         //create Elements
