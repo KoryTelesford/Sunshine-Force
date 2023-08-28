@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,66 +13,77 @@
     <script defer src="script.js"></script>
     <script defer src="spotify.js"></script>
 </head>
+
 <body>
-    <header class="topnav">
-        <a class="active" href="#" id="weather"> Weather </a>
-        <a href="#" id="about"> About</a>
-        <input type="text" placeholder="Search">
-    </header>
 
-    <div class="top">
-        <h2 id="cityname"> </h2>
-        <h1 id="temp"> </h1>
-        <h2 id="desc"> </h2>
-        <h2 id="handlpressure"> H:29°  L:15° </h2>
-    </div>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/snow.mp4" type="video/mp4">
+    </video>
 
-    <div class="card">
-        <div class="background">
-            <p>Cloudy conditions from 1<span id="amptag">AM</span>-9<span id="amptag">AM.</span>, with</p>
-            <p>showers expected at 9<span id="amptag">AM.</span></p>
 
-            <div class="nowfc">
-                <p id="now"></p>
-                <img src="">
-                <p id="nowf"></p>
+    <div class="content">
+        <header class="topnav">
+            <a class="active" href="#" id="weather"> Weather </a>
+            <a href="#" id="about"> About</a>
+            <input type="text" placeholder="Search">
+        </header>
+
+        <div class="top">
+            <h2 id="cityname"> </h2>
+            <h1 id="temp"> </h1>
+            <h2 id="desc"> </h2>
+            <h2 id="handlpressure"> H:29° L:15° </h2>
+        </div>
+
+        <div class="card">
+            <div class="background">
+                <p>Cloudy conditions from 1<span id="amptag">AM</span>-9<span id="amptag">AM.</span>, with</p>
+                <p>showers expected at 9<span id="amptag">AM.</span></p>
+
+                <div class="nowfc">
+                    <p id="now"></p>
+                    <img src="">
+                    <p id="nowf"></p>
+                </div>
+                <div class="10fc">
+                    <p id="10pm"></p>
+                    <img src="">
+                    <p id="10f"></p>
+                </div>
+                <div class="11fc">
+                    <p id="11pm"></p>
+                    <img src="">
+                    <p id="11f"></p>
+                </div>
+                <div class="12fc">
+                    <p id="12am"></p>
+                    <img src="">
+                    <p id="12f"></p>
+                </div>
+                <div class="1fc">
+                    <p id="1am"></p>
+                    <img src="">
+                    <p id="1f"></p>
+                </div>
             </div>
-            <div class="10fc">
-                <p id="10pm"></p>
-                <img src="">
-                <p id="10f"></p>
-            </div>
-            <div class="11fc">
-                <p id="11pm"></p>
-                <img src="">
-                <p id="11f"></p>
-            </div>
-            <div class="12fc">
-                <p id="12am"></p>
-                <img src="">
-                <p id="12f"></p>
-            </div>
-            <div class="1fc">
-                <p id="1am"></p>
-                <img src="">
-                <p id="1f"></p>
+        </div>
+
+        <div class="contenty">
+            <div id="spotify_embed"> </div>
+        </div>
+
+        <div class="quotediv">
+            <div class="background">
+                <img src="img_girl.jpg" alt="Girl in a jacket" width="570" height="215">
+                <p id="quotemsg"> Expand your vocabulary.
+                    You will become very efficient.</p>
+                <p id="gen"> Generate Quote </p>
             </div>
         </div>
     </div>
 
-    <div class="contenty">
-        <div id="spotify_embed"> </div>
-    </div>
 
-    <div class="quotediv">
-        <div class="background">
-            <img src="img_girl.jpg" alt="Girl in a jacket" width="570" height="215">
-            <p id="quotemsg"> Expand your vocabulary. 
-                You will become very efficient.</p>
-            <p id="gen"> Generate Quote </p>
-        </div>
-    </div>
-    
     <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
 </body>
+
 </html>
