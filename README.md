@@ -1,6 +1,6 @@
 # MusicWeatherApp: A Musical Journey Through Weather and Quotes
 
-![MusicWeatherApp Banner]([https://www.farmersalmanac.com/wp-content/uploads/2020/07/Different-Weather-Types.jpeg](https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif))
+![MusicWeatherApp Banner]((https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif))
 
 Welcome to MusicWeatherApp, where music, weather, and inspiration collide! 🎶☀️❄️🌧️
 
