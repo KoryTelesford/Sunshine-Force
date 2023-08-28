@@ -80,5 +80,43 @@ const weatherTest = async () => {
 }
 
 
+// 6 day forcast
+
+const fetchWeatherForecast = async(cityName) => {
+ const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(cityName)}&appid=${weatherApiKey}&units=imperial`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    console.log('Weather forecast data:', data);
+    
+    const forcasts = data.list.slice(0,6)
+    // console.log(forcasts)
+    
+    let forcastDiv = document.getElementById("forcast")
+    
+   
+    forcasts.forEach(forcast => {
+        const div = document.createElement('div')
+        const h3 = document.createElement('h3')
+        let temps = Math.floor(forcast.main.temp)
+        h3.textContent = temps
+        
+        console.log(temps)
+        forcastDiv.appendChild(h3)
+        document.body.appendChild(forcastDiv)
+        
+    })
+    
+    
+    
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
+}
+
+
+fetchWeatherForecast(cityName);
 //Call API
 weatherTest()
