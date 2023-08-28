@@ -1,6 +1,8 @@
 # MusicWeatherApp: A Musical Journey Through Weather and Quotes
 
-<img src="https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif" alt="MusicWeatherApp Banner" width="450" height="300">
+<div style="text-align: center;">
+  <img src="https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif" alt="MusicWeatherApp Banner" width="100" height="100">
+</div>
 
 Welcome to MusicWeatherApp, where music, weather, and inspiration collide! 🎶☀️❄️🌧️
 
