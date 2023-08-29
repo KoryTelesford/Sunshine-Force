@@ -1,4 +1,4 @@
-console.log(weatherApiKey)
+// console.log(weatherApiKey)
 
 //Input values
 const cityName = 'miami'
@@ -17,7 +17,7 @@ const weatherTest = async () => {
         const data = await res.json()
         
         //spotify mood condition 
-        console.log(data.weather[0].main);
+        // console.log(data.weather[0].main);
         switch(data.weather[0].main) {
             case 'Rain' :
                 weatherMood = 'sad'
@@ -51,16 +51,21 @@ const weatherTest = async () => {
         const city = document.getElementById("cityname")
         const currTemp = document.getElementById("temp")
         const desc = document.getElementById("desc")
+        const high = document.getElementById("high")
+        const low = document.getElementById("low")
+        const top = document.getElementById("top")
         
+        //Round down to the nearest whole number
         let temp = Math.floor(data.main.temp)
+        let highTemp = Math.floor(data.main.temp_max)
+        let lowTemp = Math.floor(data.main.temp_min)
         
+        //append 
         city.innerHTML = data.name
         currTemp.innerHTML = `${temp}°F`
+        high.innerHTML = highTemp
+        low.innerHTML = lowTemp
         desc.innerHTML = data.weather[0].description
-
-        //Append 
-        
-        const top = document.getElementById("top")
         top.append(city)
         top.append(currTemp)
         top.append(desc)
@@ -89,25 +94,40 @@ const fetchWeatherForecast = async(cityName) => {
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    console.log('Weather forecast data:', data);
+    // console.log('Weather forecast data:', data);
     
     const forcasts = data.list.slice(0,6)
-    // console.log(forcasts)
+    console.log(forcasts)
     
     let forcastDiv = document.getElementById("forcast")
     
+    let forcastArray = [];
    
+   // get temp of each element 
     forcasts.forEach(forcast => {
-        const div = document.createElement('div')
-        const h3 = document.createElement('h3')
         let temps = Math.floor(forcast.main.temp)
-        h3.textContent = temps
-        
-        console.log(temps)
-        forcastDiv.appendChild(h3)
-        document.body.appendChild(forcastDiv)
-        
+        forcastArray.push(temps)
     })
+    
+    //get elements 
+    
+    const now = document.getElementById("nowf")
+    const day1 = document.getElementById("day1f")
+    const day2 = document.getElementById("day2f")
+    const day3 = document.getElementById("day3f")
+    const day4 = document.getElementById("day4f")
+    const day5 = document.getElementById("day5f")
+    
+    now.innerHTML = forcastArray[0]
+    day1.innerHTML = forcastArray[1]
+    day2.innerHTML = forcastArray[2]
+    day3.innerHTML = forcastArray[3]
+    day4.innerHTML = forcastArray[4]
+    day5.innerHTML = forcastArray[5]
+    
+    
+    console.log(forcastArray)
+    
     
     
     
