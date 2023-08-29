@@ -47,6 +47,15 @@ const weatherTest = async () => {
                 weatherMood = 'lofi';
         }
         
+        //set background image
+        const backgroundImg = document.getElementById("")
+        document.body.style.cssText = `
+        background-image: url("assets/rain.jpg") 
+        background-repeat: no-repeat;
+        
+        `
+        
+        
         //create Elements
         const city = document.getElementById("cityname")
         const currTemp = document.getElementById("temp")
