@@ -47,11 +47,11 @@ body {
 
 .top {
     width: 375px;
-    height: 195px;
     text-align: center;
     margin: auto;
     margin-top: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif; 
+    padding-bottom: 20px;
 }
 
 .top #cityname {
@@ -106,13 +106,15 @@ body {
 
 .card {
     /*width: 528px;*/
-    height: 212px;
+    height: 190px;
 }
 .background {
     display: flex;
     justify-content: space-around;
     align-items: center; 
     color: white;
+    font-size: 20px;
+    padding-top: 20px;
 }
 
 

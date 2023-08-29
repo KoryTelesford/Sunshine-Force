@@ -102,11 +102,19 @@ const fetchWeatherForecast = async(cityName) => {
     let forcastDiv = document.getElementById("forcast")
     
     let forcastArray = [];
-   
+    let icons = [];
+    let date = [];
+    
+    
    // get temp of each element 
     forcasts.forEach(forcast => {
-        let temps = Math.floor(forcast.main.temp)
+        let temps = Math.ceil(forcast.main.temp)
         forcastArray.push(temps)
+        // console.log("forcast", `${forcast.weather[0].icon}`)
+        icons.push(forcast.weather[0].icon + ".png")
+        // date.push(forcast.dt_text)
+        console.log(`${forcast.dt_text}`)
+        
     })
     
     //get elements 
@@ -118,18 +126,31 @@ const fetchWeatherForecast = async(cityName) => {
     const day4 = document.getElementById("day4f")
     const day5 = document.getElementById("day5f")
     
-    now.innerHTML = forcastArray[0]
-    day1.innerHTML = forcastArray[1]
-    day2.innerHTML = forcastArray[2]
-    day3.innerHTML = forcastArray[3]
-    day4.innerHTML = forcastArray[4]
-    day5.innerHTML = forcastArray[5]
+    now.innerHTML = forcastArray[0] + "°"
+    day1.innerHTML = forcastArray[1] + "°"
+    day2.innerHTML = forcastArray[2] + "°"
+    day3.innerHTML = forcastArray[3] + "°"
+    day4.innerHTML = forcastArray[4] + "°"
+    day5.innerHTML = forcastArray[5] + "°"
     
+    // icons
+    const nowImg = document.getElementById("nowImg")
+    const day1Img = document.getElementById("day1Img")
+    const day2Img = document.getElementById("day2Img")
+    const day3Img = document.getElementById("day3Img")
+    const day4Img = document.getElementById("day4Img")
+    const day5Img = document.getElementById("day5Img")
     
-    console.log(forcastArray)
+    nowImg.innerHTML = "Test Test"
+    nowImg.src = icons[0]
+    day1Img.src = icons[1]
+    day2Img.src = icons[2]
+    day3Img.src = icons[3]
+    day4Img.src = icons[4]
+    day5Img.src = icons[5]
+  
     
-    
-    
+    // console.log("date", date)
     
   } catch (error) {
     console.error('An error occurred:', error);
