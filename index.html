@@ -16,9 +16,9 @@
 
 <body>
 
-    <video autoplay muted loop id="myVideo">
-        <source src="assets/snow.mp4" type="video/mp4">
-    </video>
+    <!--<video autoplay muted loop id="myVideo">-->
+    <!--    <source src="assets/snow.mp4" type="video/mp4">-->
+    <!--</video>-->
 
 
     <div class="content">
@@ -32,7 +32,7 @@
             <h2 id="cityname"> </h2>
             <h1 id="temp"> </h1>
             <h2 id="desc"> </h2>
-            <h2 id="handlpressure"> H:29° L:15° </h2>
+            <h2 id="handlpressure"> H:<span id="high"></span>° L:<span id="low"></span>° </h2>
         </div>
         
         <div class="forcast">
@@ -41,33 +41,38 @@
 
         <div class="card">
             <div class="background">
-                <p>Cloudy conditions from 1<span id="amptag">AM</span>-9<span id="amptag">AM.</span>, with</p>
-                <p>showers expected at 9<span id="amptag">AM.</span></p>
+                <!--<p>Cloudy conditions from 1<span id="amptag">AM</span>-9<span id="amptag">AM.</span>, with</p>-->
+                <!--<p>showers expected at 9<span id="amptag">AM.</span></p>-->
 
                 <div class="nowfc">
                     <p id="now"></p>
-                    <img src="">
+                    <img id="nowImg" src="">
                     <p id="nowf"></p>
                 </div>
-                <div class="10fc">
-                    <p id="10pm"></p>
-                    <img src="">
-                    <p id="10f"></p>
+                <div class="day1fc">
+                    <p id="day1"></p>
+                    <img id="day1Img" src="">
+                    <p id="day1f"></p>
                 </div>
-                <div class="11fc">
-                    <p id="11pm"></p>
-                    <img src="">
-                    <p id="11f"></p>
+                <div class="day2fc">
+                    <p id="day2"></p>
+                    <img id="day2Img"src="">
+                    <p id="day2f"></p>
                 </div>
-                <div class="12fc">
-                    <p id="12am"></p>
-                    <img src="">
-                    <p id="12f"></p>
+                <div class="day3fc">
+                    <p id="day3"></p>
+                    <img id="day3Img" src="">
+                    <p id="day3f"></p>
                 </div>
-                <div class="1fc">
-                    <p id="1am"></p>
-                    <img src="">
-                    <p id="1f"></p>
+                <div class="day4fc">
+                    <p id="day4"></p>
+                    <img id="day4Img" src="">
+                    <p id="day4f"></p>
+                </div>
+                <div class="day5fc">
+                    <p id="day5"></p>
+                    <img id="day5Img" src="">
+                    <p id="day5f"></p>
                 </div>
             </div>
         </div>

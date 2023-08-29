@@ -47,11 +47,11 @@ body {
 
 .top {
     width: 375px;
-    height: 195px;
     text-align: center;
     margin: auto;
     margin-top: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif; 
+    padding-bottom: 20px;
 }
 
 .top #cityname {
@@ -105,22 +105,38 @@ body {
 /* Card */
 
 .card {
-    width: 528px;
-    height: 212px;
+    /*width: 528px;*/
+    height: 190px;
 }
-
+.background {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    color: white;
+    font-size: 20px;
+    padding-top: 20px;
+}
 
 
 
 /* -------- */
 
-#myVideo {
+/* Card */
+/*.dayForcasts {*/
+/*    display: flex;*/
+/*}*/
+
+
+
+/* -------- */
+
+/*#myVideo {*/
   /*position: fixed;*/
-  right: 0;
-  bottom: 0;
-  width: 100px;
-  height: 100px;
-}
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*}*/
 
 /* Add some content at the bottom of the video/page */
 /*.content {*/
