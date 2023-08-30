@@ -1,7 +1,7 @@
 // console.log(weatherApiKey)
 
 //Input values
-const cityName = 'New York'
+const cityName = 'Norwalk'
 let weatherMood;
 
 //import Api
@@ -22,12 +22,13 @@ const weatherTest = async () => {
 
         //background
         const backgroundImages = {
-            'Clouds': 'cloudy.jpg',
-            'Clear': 'clear.jpg',
-            'Thunderstorm': 'thunder.jpg',
-            'Drizzle': 'rain.jpg',
-            'Rain': 'rain.jpg',
-            'Snow': 'snow.jpg'
+            'Clouds': 'cloudy.gif',
+            'Clear': 'clearsky.gif',
+            'Thunderstorm': 'thunder.gif',
+            'Drizzle': 'rain.gif',
+            'Rain': 'rain.gif',
+            'Snow': 'snow.gif'
+            
         };
 
         if (backgroundImages.hasOwnProperty(weatherMood)) {
