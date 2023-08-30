@@ -45,7 +45,7 @@ const weatherTest = async () => {
 
         //background
         const backgroundImages = {
-            'Clouds': 'cloudy.png',
+            'Clouds': 'cloudy.jpg',
             'Clear': 'clearsky.gif',
             'Thunderstorm': 'thunder.gif',
             'Drizzle': 'rain.gif',
