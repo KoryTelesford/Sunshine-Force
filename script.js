@@ -16,47 +16,27 @@ const weatherTest = async () => {
         const res = await fetch(apiUrl);
         const data = await res.json()
 
+        // console.log(data)
+
         weatherMood = data.weather[0].main;
 
         //background
+        const backgroundImages = {
+            'Clouds': 'cloudy.jpg',
+            'Clear': 'clear.jpg',
+            'Thunderstorm': 'thunder.jpg',
+            'Drizzle': 'rain.jpg',
+            'Rain': 'rain.jpg',
+            'Snow': 'snow.jpg'
+        };
 
-        if (weatherMood === 'Clouds') {
+        if (backgroundImages.hasOwnProperty(weatherMood)) {
+            const backgroundImage = backgroundImages[weatherMood];
             document.body.style.cssText = `
-            background-image: url("assets/cloudy.jpg");
+            background-image: url("assets/${backgroundImage}");
             background-repeat: no-repeat;
             background-size: cover;
-            `
-        } else if (weatherMood === 'Clear'){
-            document.body.style.cssText = `
-            background-image: url("assets/clear.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            `
-        } else if (weatherMood === 'Thunderstorm'){
-            document.body.style.cssText = `
-            background-image: url("assets/thunder.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            `
-            
-        } else if (weatherMood === 'Drizzle'){
-            document.body.style.cssText = `
-            background-image: url("assets/rain.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            `
-        } else if (weatherMood === 'Rain'){
-            document.body.style.cssText = `
-            background-image: url("assets/rain.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            `
-        } else if (weatherMood === 'Snow'){
-            document.body.style.cssText = `
-            background-image: url("assets/snow.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            `
+              `;
         }
 
         //spotify mood condition 
@@ -131,78 +111,46 @@ const weatherTest = async () => {
 
 // 6 day forcast
 
-const fetchWeatherForecast = async (cityName) => {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(cityName)}&appid=${weatherApiKey}&units=imperial`;
+async function getDayOfWeekForecast(dayOfWeek) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${weatherApiKey}&units=imperial`;
 
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        // console.log('Weather forecast data:', data);
+        if (response.ok) {
+            const forecastList = data.list;
 
-        const forcasts = data.list.slice(0, 6)
-        console.log(forcasts)
+            const dayForecast = forecastList.find(item => {
+                const date = new Date(item.dt * 1000);
+                return date.getDay() === dayOfWeek;
+            });
 
-        let forcastDiv = document.getElementById("forcast")
+            if (dayForecast) {
+                const date = new Date(dayForecast.dt * 1000);
+                const temperature = Math.round(dayForecast.main.temp);
+                const description = dayForecast.weather[0].description;
 
-        let forcastArray = [];
-        let icons = [];
-        let date = [];
+                const dayElement = document.getElementById(`day${dayOfWeek}`);
+                const imgElement = document.getElementById(`day${dayOfWeek}Img`);
+                const forecastElement = document.getElementById(`day${dayOfWeek}f`);
 
-
-        // get temp of each element 
-        forcasts.forEach(forcast => {
-            let temps = Math.ceil(forcast.main.temp)
-            forcastArray.push(temps)
-            // console.log("forcast", `${forcast.weather[0].icon}`)
-            icons.push(forcast.weather[0].icon + ".png")
-            // date.push(forcast.dt_text)
-            console.log(`${forcast.dt_text}`)
-
-        })
-
-        //get elements 
-
-        const now = document.getElementById("nowf")
-        const day1 = document.getElementById("day1f")
-        const day2 = document.getElementById("day2f")
-        const day3 = document.getElementById("day3f")
-        const day4 = document.getElementById("day4f")
-        const day5 = document.getElementById("day5f")
-
-        now.innerHTML = forcastArray[0] + "°"
-        day1.innerHTML = forcastArray[1] + "°"
-        day2.innerHTML = forcastArray[2] + "°"
-        day3.innerHTML = forcastArray[3] + "°"
-        day4.innerHTML = forcastArray[4] + "°"
-        day5.innerHTML = forcastArray[5] + "°"
-
-        // icons
-        const nowImg = document.getElementById("nowImg")
-        const day1Img = document.getElementById("day1Img")
-        const day2Img = document.getElementById("day2Img")
-        const day3Img = document.getElementById("day3Img")
-        const day4Img = document.getElementById("day4Img")
-        const day5Img = document.getElementById("day5Img")
-
-        nowImg.innerHTML = "Test Test"
-        nowImg.src = icons[0]
-        day1Img.src = icons[1]
-        day2Img.src = icons[2]
-        day3Img.src = icons[3]
-        day4Img.src = icons[4]
-        day5Img.src = icons[5]
-
-
-        // console.log("date", date)
-
+                dayElement.textContent = date.toLocaleDateString('en-US', { weekday: 'long' });
+                imgElement.src = `https://openweathermap.org/img/wn/${dayForecast.weather[0].icon}.png`;
+                forecastElement.textContent = `${temperature}°F - ${description}`;
+            }
+        }
+        else {
+            console.error('Error fetching data:', data.message);
+        }
     }
     catch (error) {
         console.error('An error occurred:', error);
     }
 }
 
+for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+    getDayOfWeekForecast(dayOfWeek);
+}
 
-fetchWeatherForecast(cityName);
-//Call API
 weatherTest()
