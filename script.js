@@ -1,7 +1,7 @@
 // console.log(weatherApiKey)
 
 //Input values
-const cityName = 'miami'
+const cityName = 'New York'
 let weatherMood;
 
 //import Api
