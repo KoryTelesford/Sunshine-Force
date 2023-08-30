@@ -1,0 +1,1 @@
+const weatherApiKey = "1caf235c8de60e17b6a2a7d3d5770d89"

@@ -20,7 +20,9 @@
         <header class="topnav">
             <a class="active" href="#" id="weather"> Weather </a>
             <a href="#" id="about"> About</a>
-            <input type="text" placeholder="Search">
+            <form id="search_b" action="#">
+                <input id="search_in"type="text" placeholder="Search" onkeydown="handle(event)">
+            </form>
         </header>
 
         <div class="top">

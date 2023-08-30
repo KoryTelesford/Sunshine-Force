@@ -1,11 +1,34 @@
 // console.log(weatherApiKey)
 
 //Input values
-const cityName = 'Norwalk'
+let cityName = 'New York'
 let weatherMood;
+
+//Saves City Name
+if(localStorage.getItem('CityName') === null) {
+    localStorage.setItem('CityName', cityName)
+} else {
+    cityName = localStorage.getItem('CityName')
+}
 
 //import Api
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${config.cheeseCake}&units=imperial`
+
+//Pass Value to WeatherTest to change weather value.
+const handle = (event) => {
+    if(event.key === "Enter") {
+        // searchvalue =
+        event.preventDefault()
+        cityName =  document.getElementById('search_in').value;
+        localStorage.setItem('CityName', cityName)
+        console.log(cityName)
+        history.go(0);
+
+    }
+
+    return false;
+}
+
 
 //Get current weather function
 const weatherTest = async () => {
