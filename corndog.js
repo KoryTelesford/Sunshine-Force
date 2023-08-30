@@ -1,7 +1,7 @@
 const SpotifyAPI = (() => {
     
-    const clientId = 'b1b168272e464c94969469175b3af00e';
-    const clientSecret = '732cf02d2b22432f8f4f5c29b87a66ff';
+    // const clientId = 'b1b168272e464c94969469175b3af00e';
+    // const clientSecret = '732cf02d2b22432f8f4f5c29b87a66ff';
 
     const _getToken = async () => {
 
@@ -9,7 +9,7 @@ const SpotifyAPI = (() => {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/x-www-form-urlencoded', 
-                'Authorization' : 'Basic ' + btoa(clientId + ':' + clientSecret)
+                'Authorization' : 'Basic ' + btoa(config.tacobell + ':' + config.perro)
             },
             body: 'grant_type=client_credentials'
         });

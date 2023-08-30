@@ -5,7 +5,7 @@ const cityName = 'New York'
 let weatherMood;
 
 //import Api
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weatherApiKey}&units=imperial`
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${config.cheeseCake}&units=imperial`
 
 //Get current weather function
 const weatherTest = async () => {
@@ -112,7 +112,7 @@ const weatherTest = async () => {
 // 6 day forcast
 
 async function getDayOfWeekForecast(dayOfWeek) {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${weatherApiKey}&units=imperial`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${config.cheeseCake}&units=imperial`;
 
     try {
         const response = await fetch(apiUrl);
