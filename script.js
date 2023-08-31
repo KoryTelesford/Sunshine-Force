@@ -177,4 +177,4 @@ for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
     getDayOfWeekForecast(dayOfWeek);
 }
 
-weatherTest();
+weatherTest()
