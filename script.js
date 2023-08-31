@@ -161,7 +161,7 @@ async function getDayOfWeekForecast(dayOfWeek) {
 
                 dayElement.textContent = date.toLocaleDateString('en-US', { weekday: 'long' });
                 imgElement.src = `https://openweathermap.org/img/wn/${dayForecast.weather[0].icon}.png`;
-                forecastElement.textContent = `${temperature}°F \n ${description}`;
+                forecastElement.textContent = `${temperature}°F - ${description}`;
             }
         }
         else {
