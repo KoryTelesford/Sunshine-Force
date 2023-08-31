@@ -178,7 +178,3 @@ for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
 }
 
 weatherTest();
-
-setTimeout(() => {
-    weatherTest();
-}, 5000);
