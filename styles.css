@@ -1,6 +1,14 @@
-body {
+body{        
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
     background-color: lightslategray;
-}
+  }
+  
 
 /* Header */
 
@@ -154,3 +162,32 @@ body {
 
 
 /* -------- */
+
+/* Loading */
+
+.pagelu    { display: none;}
+
+#loading {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(21, 27, 31, 1);
+  background-image: url("assets/d95it6h-ceaa1da3-727a-402f-8061-9a0a8e68af13.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px 300px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  mix-blend-mode: normal; 
+  
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
