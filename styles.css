@@ -30,13 +30,17 @@ body{
 
 /* Style the "active" element to highlight the current page */
 .topnav a.active {
-    text-decoration-line: underline;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
 }
 
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
-    width: 168.5px;
-    height: 15px;
+    width: 268.5px;
+    height: 35px;
     float: right;
     padding: 6px;
     border: none;
@@ -49,7 +53,6 @@ body{
 }
 
 /* ------ */
-
 
 /* Top */
 
@@ -112,12 +115,13 @@ body{
 
 /* Card */
 
-.card {
+.forecast-card-container {
     /*width: 528px;*/
     height: 190px;
+    /*background-color: purple;*/
 }
 
-.background {
+.forecast-background {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -130,9 +134,10 @@ body{
     background-color: rgba(0, 0, 0, 0.3);
     /*padding: 10px;*/
     border-radius: 10px;
-    margin: 10px;
+    /*margin: 10px;*/
+    padding-top: 15px;
     text-align: center;
-    width: 200px;
+    width: 150px;
     height: 200px;
 }
 
@@ -141,14 +146,18 @@ body{
     height: 60px;
 }
 
+.day-info {
+    font-size: 20px;
+}
 
 /* -------- */
 
 /* Card */
 
 .contenty {
-  margin-top: 50px; /* Add some spacing between the two divs */
+  margin-top: 60px;
 }
+
 
 
 
