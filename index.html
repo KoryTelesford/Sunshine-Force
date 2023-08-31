@@ -12,6 +12,9 @@
     <script defer src="cheese.js"></script>
     <script defer src="script.js"></script>
     <script defer src="corndog.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -19,9 +22,10 @@
     <div class="content">
         <header class="topnav">
             <a class="active" href="#" id="weather"> Weather </a>
-            <a href="#" id="about"> About</a>
+            <a class="active" href="#" id="about"> About</a>
+            
             <form id="search_b" action="#">
-                <input id="search_in"type="text" placeholder="Search" onkeydown="handle(event)">
+                <input id="search_in" type="text" placeholder="Search" onkeydown="handle(event)">
             </form>
         </header>
 
@@ -36,56 +40,54 @@
 
         </div>
 
-        <div class="card">
-            <div class="background">
+        <div class="forecast-card-container">
+            <div class="forecast-background">
                 <!--<p>Cloudy conditions from 1<span id="amptag">AM</span>-9<span id="amptag">AM.</span>, with</p>-->
                 <!--<p>showers expected at 9<span id="amptag">AM.</span></p>-->
 
                 <div class="forecast-card">
                     <p id="day0"></p>
                     <img id="day0Img" src="">
-                    <p id="day0f"></p>
+                    <p class="day-info" id="day0f"></p>
                 </div>
 
                 <div class="forecast-card">
                     <p id="day1"></p>
                     <img id="day1Img" src="">
-                    <p id="day1f"></p>
+                    <p class="day-info" id="day1f"></p>
                 </div>
 
                 <div class="forecast-card">
                     <p id="day2"></p>
                     <img id="day2Img" src="">
-                    <p id="day2f"></p>
+                    <p class="day-info" id="day2f"></p>
                 </div>
-                
+
                 <div class="forecast-card">
                     <p id="day3"></p>
                     <img id="day3Img" src="">
-                    <p id="day3f"></p>
+                    <p class="day-info" id="day3f"></p>
                 </div>
-                
+
                 <div class="forecast-card">
                     <p id="day4"></p>
                     <img id="day4Img" src="">
-                    <p id="day4f"></p>
+                    <p class="day-info" id="day4f"></p>
                 </div>
-                
+
                 <div class="forecast-card">
                     <p id="day5"></p>
                     <img id="day5Img" src="">
-                    <p id="day5f"></p>
+                    <p class="day-info" id="day5f"></p>
                 </div>
-                
+
                 <div class="forecast-card">
                     <p id="day6"></p>
                     <img id="day6Img" src="">
-                    <p id="day6f"></p>
+                    <p class="day-info" id="day6f"></p>
                 </div>
             </div>
-        </div>
-
-
+        </div> 
 
         <div class="contenty">
             <div id="spotify_embed"> </div>
@@ -103,6 +105,8 @@
 
 
     <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
