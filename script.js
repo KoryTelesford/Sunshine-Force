@@ -48,15 +48,15 @@ const weatherTest = async () => {
         if(weatherMood === "Clouds"){
             alertText.innerHTML = "Oh it looks very cloudy outside"
         } else if (weatherMood === "Clear"){
-            alertText.innerHTML = "It's so sunny! Yaya"
+            alertText.innerHTML = "Don't forget to wear sunscreen today!"
         } else if (weatherMood === "Thunderstorm"){
-            alertText.innerHTML = "BOOOOM make sure to bring Umbrella"
+            alertText.innerHTML = "It's storming, make sure to bring an umbrella!"
         } else if (weatherMood === "Drizzle"){
             alertText.innerHTML = "Plip Plap Plop"
         } else if (weatherMood === "Rain"){
             alertText.innerHTML = "Make Sure to Bring an Umbrella"
         } else if (weatherMood === "Snow"){
-            alertText.innerHTML = "It's snowing! Time to build a snowman!"
+            alertText.innerHTML = "It's chilly out, don't forget to wear a scarf!"
         }
         
         //background
@@ -163,6 +163,7 @@ async function getDayOfWeekForecast(dayOfWeek) {
         console.log(data)
 
         if (response.ok) {
+        
             const forecastList = data.list;
 
             const dayForecast = forecastList.find(item => {
