@@ -1,14 +1,14 @@
-body{        
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: scroll;
-    scrollbar-width: none; 
+    scrollbar-width: none;
     -ms-overflow-style: none;
     background-color: lightslategray;
-  }
-  
+}
+
 
 /* Header */
 
@@ -118,12 +118,13 @@ body{
 
 .forecast-card-container {
     /*width: 528px;*/
-    height: 190px;
+    /*height: 190px;*/
     /*background-color: purple;*/
 }
 
 .forecast-background {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     color: white;
@@ -134,7 +135,7 @@ body{
 .forecast-card {
     background-color: rgba(0, 0, 0, 0.3);
     /*padding: 10px;*/
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     /*margin: 10px;*/
     padding-top: 15px;
     text-align: center;
@@ -156,17 +157,17 @@ body{
 /* Card */
 
 .contenty {
-  margin-top: 60px;
+    margin-top: 60px;
 }
 
 
 @media screen and (max-width: 768px) {
     .forecast-card-container {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .forecast-card {
-        width: 80%; 
+        width: 80%;
     }
 }
 
@@ -176,31 +177,33 @@ body{
 
 /* Loading */
 
-.pagelu    { display: none;}
+.pagelu {
+    display: none;
+}
 
 #loading {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background-color: rgba(21, 27, 31, 1);
-  background-image: url("assets/d95it6h-ceaa1da3-727a-402f-8061-9a0a8e68af13.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 200px 300px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
-  mix-blend-mode: normal; 
-  
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(21, 27, 31, 1);
+    background-image: url("assets/d95it6h-ceaa1da3-727a-402f-8061-9a0a8e68af13.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px 300px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    mix-blend-mode: normal;
+
 }
 
 *::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* -------- */
@@ -221,8 +224,7 @@ body{
     font-size: 35px;
     line-height: 1.5;
     margin-bottom: 20px;
-    width: 80%
-    text-align: center;
+    width: 80% text-align: center;
 }
 
 #gen {
@@ -273,6 +275,11 @@ body{
     /*background-color: #219145;*/
 }
 
+/*popup on the side*/
 
-
-
+#toast-body {
+    padding-left: 20px;
+    font-size: 17px;
+    height: 30px;
+    /*color: darkgray;*/
+}
