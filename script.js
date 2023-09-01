@@ -210,7 +210,7 @@ const replaceImages = () => {
     while (imageContainer.firstChild) {
         imageContainer.removeChild(imageContainer.firstChild);
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 6; i++) {
         RandomImage();
     }
 };
