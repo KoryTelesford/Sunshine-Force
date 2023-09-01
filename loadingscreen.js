@@ -8,7 +8,7 @@ function onReady(callback) {
       if (document.getElementsByTagName('body')[0] !== undefined) {
         window.clearInterval(intervalId);
         callback.call(this);
-        console.log("Ran")
+        // console.log("Ran")
       }
     }, 1000);
   }
@@ -34,14 +34,14 @@ async function updateQuote() {
     //   cite.textContent = data.author;
     quotem.textContent = data.content
 
-    console.log(data.content)
-    console.log(data.author)
-    console.log(data);
+    // console.log(data.content)
+    // console.log(data.author)
+    // console.log(data);
 
 
     } else {
       quotem.textContent = "An error occured";
-      console.log(data);
+      // console.log(data);
     }
   }
 

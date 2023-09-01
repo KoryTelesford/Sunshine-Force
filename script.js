@@ -21,7 +21,6 @@ const handle = (event) => {
         event.preventDefault()
         cityName =  document.getElementById('search_in').value;
         localStorage.setItem('CityName', cityName)
-        console.log(cityName)
         history.go(0);
 
     }
@@ -159,8 +158,6 @@ async function getDayOfWeekForecast(dayOfWeek) {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        
-        console.log(data)
 
         if (response.ok) {
         
@@ -210,7 +207,7 @@ const replaceImages = () => {
     while (imageContainer.firstChild) {
         imageContainer.removeChild(imageContainer.firstChild);
     }
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 2; i++) {
         RandomImage();
     }
 };
