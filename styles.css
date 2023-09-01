@@ -115,6 +115,7 @@ body{
 
 /* Card */
 
+
 .forecast-card-container {
     /*width: 528px;*/
     height: 190px;
@@ -159,6 +160,16 @@ body{
 }
 
 
+@media screen and (max-width: 768px) {
+    .forecast-card-container {
+        flex-direction: column; 
+    }
+
+    .forecast-card {
+        width: 80%; 
+    }
+}
+
 
 
 /* -------- */
@@ -191,3 +202,77 @@ body{
 *::-webkit-scrollbar {
   display: none;
 }
+
+/* -------- */
+
+/* Quote Generator */
+
+.quotediv {
+    padding-top: 70px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+
+#quotemsg {
+    color: #fff;
+    font-size: 35px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    width: 80%
+    text-align: center;
+}
+
+#gen {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#gen:hover {
+    /*background-color: gray;*/
+    /*opacity: 0.5;*/
+    /*border: white;*/
+}
+
+
+/* -------- */
+
+/* Photos */
+
+.imageContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.centered-container {
+    text-align: center;
+}
+
+
+#generate-image-button {
+    /*background-color: none;*/
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /*transition: background-color 0.3s ease;*/
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+#generate-image-button:hover {
+    /*background-color: #219145;*/
+}
+
+
+
+

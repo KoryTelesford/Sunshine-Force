@@ -42,7 +42,23 @@ const weatherTest = async () => {
         // console.log(data)
 
         weatherMood = data.weather[0].main;
-
+        
+        const alertText = document.getElementById("toast-body")
+        
+        if(weatherMood === "Clouds"){
+            alertText.innerHTML = "Oh it looks very cloudy outside"
+        } else if (weatherMood === "Clear"){
+            alertText.innerHTML = "It's so sunny! Yaya"
+        } else if (weatherMood === "Thunderstorm"){
+            alertText.innerHTML = "BOOOOM make sure to bring Umbrella"
+        } else if (weatherMood === "Drizzle"){
+            alertText.innerHTML = "Plip Plap Plop"
+        } else if (weatherMood === "Rain"){
+            alertText.innerHTML = "Make Sure to Bring an Umbrella"
+        } else if (weatherMood === "Snow"){
+            alertText.innerHTML = "It's snowing! Time to build a snowman!"
+        }
+        
         //background
         const backgroundImages = {
             'Clouds': 'cloudy.jpg',
@@ -132,6 +148,8 @@ const weatherTest = async () => {
     }
 }
 
+setInterval(weatherTest, 1000)
+
 
 // 6 day forcast
 
@@ -141,6 +159,8 @@ async function getDayOfWeekForecast(dayOfWeek) {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
+        
+        console.log(data)
 
         if (response.ok) {
             const forecastList = data.list;
@@ -177,4 +197,57 @@ for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
     getDayOfWeekForecast(dayOfWeek);
 }
 
+
+
 weatherTest()
+
+
+const replaceImages = () => {
+    const imageContainer = document.getElementById('photo-album');
+    
+    // Remove all existing images from the container
+    while (imageContainer.firstChild) {
+        imageContainer.removeChild(imageContainer.firstChild);
+    }
+    for (let i = 0; i < 3; i++) {
+        RandomImage();
+    }
+};
+
+const RandomImage = async () => {
+    try {
+        const apiUrl = 'https://random.imagecdn.app/300/400';
+        const res = await fetch(apiUrl);
+        if (res.ok) {
+            const imageURL = await res.url;
+
+            const image = document.createElement('img');
+            image.src = imageURL;
+
+            const imageContainer = document.getElementById('photo-album');
+            imageContainer.appendChild(image);
+        } else {
+            console.error(`Failed to fetch image. Status code: ${res.status}`);
+        }
+    } catch (err) {
+        console.error('Error:', err);
+    }
+};
+
+const generateImageButton = document.getElementById('generate-image-button');
+
+generateImageButton.addEventListener('click', () => {
+    replaceImages();
+});
+
+
+
+
+const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toastLiveExample = document.getElementById('liveToast');
+    const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+    toastBootstrap.show();
+  });
